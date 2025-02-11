@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('review_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('author');
             $table->timestamps();
