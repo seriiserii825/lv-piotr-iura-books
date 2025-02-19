@@ -52,7 +52,12 @@ class BookController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $book = Book::findOrFail($id);
+        return view('books.show', [
+            'book' => $book->load([
+                'reviews' => fn ($query) => $query->latest()->limit(5),
+            ]),
+        ]);
     }
 
     /**
