@@ -27,6 +27,7 @@
       @apply flex w-full items-center justify-center rounded-md px-4 py-2 text-center text-sm font-medium text-slate-500;
     }
 
+    .filter-item:hover,
     .filter-item-active {
       @apply bg-white shadow-sm text-slate-800 flex w-full items-center justify-center rounded-md px-4 py-2 text-center text-sm font-medium;
     }

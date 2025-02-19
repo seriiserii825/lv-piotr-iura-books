@@ -2,9 +2,11 @@
 @section('content')
     <form class="flex mb-5 items-center gap-3" action="{{ route('books.index') }}" method="get">
         <input class="input h-10" type="text" name="title" value="{{ request('title') }}" placeholder="Search books">
+        <input type="hidden" value="{{ request('filter') }}" name="filter" />
         <button class="btn h-10" type="submit">Search</button>
         <a class="btn h-10" href="{{ route('books.index') }}" target="_blank">Reset</a>
     </form>
+    <x-filter-books />
     @forelse($books as $book)
         <li class="mb-4">
             <div class="book-item">
