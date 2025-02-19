@@ -1,11 +1,9 @@
 @extends('layouts.app')
 @section('content')
-    <form action="{{ route('books.index') }}" method="get">
-        <input class="input mb-3" type="text" name="title" value="{{ request('title') }}" placeholder="Search books">
-        <div class="mb-3">
-            <button class="btn" type="submit">Search</button>
-            <a class="btn" href="{{ route('books.index') }}" target="_blank">Reset</a>
-        </div>
+    <form class="flex mb-5 items-center gap-3" action="{{ route('books.index') }}" method="get">
+        <input class="input h-10" type="text" name="title" value="{{ request('title') }}" placeholder="Search books">
+        <button class="btn h-10" type="submit">Search</button>
+        <a class="btn h-10" href="{{ route('books.index') }}" target="_blank">Reset</a>
     </form>
     @forelse($books as $book)
         <li class="mb-4">
